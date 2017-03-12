@@ -1,0 +1,52 @@
+
+html,
+body,
+header,
+.view {
+    height: 100%;
+}
+/* Navigation*/
+
+.navbar {
+    background-color: transparent;
+}
+
+.top-nav-collapse {
+    background-color: #3F729B;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #3F729B;
+    }
+}
+/*Intro*/
+
+.view {
+    background: url("http://cullinanelaw.com/wp-content/uploads/2013/09/can-nonprofits-hold-raffles-cullinane-law.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@media (max-width: 768px) {
+    .full-bg-img,
+    .view {
+        height: auto;
+        position: relative;
+    }
+}
+
+.description {
+    padding-top: 25%;
+    padding-bottom: 3rem;
+    color: #fff
+}
+
+@media (max-width: 992px) {
+    .description {
+        padding-top: 7rem;
+        text-align: center;
+    }
+}
