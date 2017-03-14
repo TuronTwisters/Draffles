@@ -38,7 +38,7 @@ if(isset($_POST['submit'])){
     if(preg_replace("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$^","", $email)){
     $invalemail = "<script>alertify.alert('Error','Invalid Email Format', function(){alertify.error('Error!');});</script>";
     }else{
-        //Start of username validations
+     //Start of username validations
     $querusername = mysqli_query($conn,"Select username from users where username='$username'");
     $userrows = mysqli_num_rows($querusername);
     if($userrows > 0){
