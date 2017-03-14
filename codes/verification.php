@@ -1,5 +1,6 @@
 <?php
 include 'connection.php';
+//Some Variables
 $error="";
 $errors1="";
 $success1="";
@@ -9,7 +10,7 @@ $success="";
 $error1="";
 $option1="";
 $option2="";
-      
+//Getting the Data from database    
 if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !empty($_GET['hash'])){
     // Verify data
     $email = mysqli_escape_string($conn,$_GET['email']); // Set email variable
