@@ -47,6 +47,8 @@ and open the template in the editor.
      echo $regsuc;
      echo $regerr;
      echo $cap;
+     echo $userexist;
+     echo $emailexist;
      
      ?>
         
