@@ -17,7 +17,7 @@ and open the template in the editor.
         <link rel='shortcut icon' type='image/x-icon' href='pepe.ico' />
         <!-- JavaScript -->
 <script src="//cdn.jsdelivr.net/alertifyjs/1.9.0/alertify.min.js"></script>
-
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <!-- CSS -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.9.0/css/alertify.min.css"/>
 <!-- Default theme -->
@@ -46,6 +46,7 @@ and open the template in the editor.
      echo $invalemail;
      echo $regsuc;
      echo $regerr;
+     echo $cap;
      
      ?>
         
@@ -126,6 +127,9 @@ and open the template in the editor.
                                     <i class="fa fa-lock prefix"></i>
                                     <input type="password" id="form4" class="form-control" name="password">
                                     <label for="form4">Password</label>
+                                </div>
+                                <div class="text-center">
+                                <div class="g-recaptcha" data-sitekey="6Lci5BgUAAAAAOpATiJtIcZG6BCX8w3e9DZfe5R4"></div>
                                 </div>
                                 <div class="text-center">
                                     <button class="btn btn-ins btn-lg" name="submit"  type="submit">Sign up</button>                                                                     
