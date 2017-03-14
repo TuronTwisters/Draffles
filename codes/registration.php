@@ -2,6 +2,8 @@
 include 'connection.php';
 //Some Variables
 $invalemail="";
+$userexist="";
+$emailexist ="";
 $regsuc ="";
 $regerr="";
 $cap="";
@@ -36,8 +38,21 @@ if(isset($_POST['submit'])){
     if(preg_replace("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$^","", $email)){
     $invalemail = "<script>alertify.alert('Error','Invalid Email Format', function(){alertify.error('Error!');});</script>";
     }else{
+        //Start of username validations
+    $querusername = mysqli_query($conn,"Select username from users where username='$username'");
+    $userrows = mysqli_num_rows($querusername);
+    if($userrows > 0){
+         $userexist = "<script>alertify.alert('Error','Username had been used', function(){alertify.error('Error!');});</script>";
+    }else{
+        //START of EMAIL VALIDATIONS
+        $queremail = mysqli_query($conn, "Select email from users where email ='$email'");
+        $emailrows = mysqli_num_rows($queremail);
+        if($emailrows > 0){
+        $emailexist = "<script>alertify.alert('Error','Email has been used', function(){alertify.error('Error!');});</script>";
+    }else{
+      
     //If all Required are true this will insert into database
-    $query = "INSERT INTO `users`(username,password,email,hash,epassword) VALUES ('$username','$password','$email','$hash','$epassword')";
+    $query = "INSERT INTO `users`(username,password,email,hash,epassword,ipadd) VALUES ('$username','$password','$email','$hash','$epassword','$ip')";
     $result = mysqli_query($conn,$query);
     if($result){
         
@@ -63,7 +78,9 @@ if(isset($_POST['submit'])){
         echo "Not inserted";
         mysqli_close($conn);
     }
-   }    
+   } //END OF INSERTING DATA
+    }//END OF EMAIL Duplicate checking
+    }//END OF Username Duplicate Checking
     }else
     {
        $cap = "<script>alertify.alert('Error','Check Captcha Validations', function(){alertify.error('Error!');});</script>";
