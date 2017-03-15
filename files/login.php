@@ -46,6 +46,7 @@
     echo $passworderr;
     echo $successin;
     echo $errorin;
+    
     ?>
 <!--Navigation & Intro-->
 
@@ -102,7 +103,7 @@
                                 <form method = "post" action = "">
                                 <div class="md-form">
                                     <i class="fa fa-user prefix"></i>
-                                    <input type="text" id="form3" class="form-control" name="usernamein">
+                                    <input type="text" id="form3" class="form-control" name="usernamein" value="<?php if(isset($_POST['usernamein'])){echo $_POST['usernamein'];}?>">
                                     <label for="form3">Username</label>
                                 </div>
 
@@ -111,7 +112,7 @@
                                     <input type="password" id="form4" class="form-control" name="passwordin">
                                     <label for="form4">Password</label>
                                 </div>
-
+                                
                                 <div class="text-center">
                                     <button class="btn btn-ins btn-lg" type="submit" name="submit">Login</button>                                                             
                                 </div>
