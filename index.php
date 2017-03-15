@@ -112,16 +112,16 @@ and open the template in the editor.
                                     <h3><i class="fa fa-user"></i> Register:</h3>
                                     <hr>
                                 </div>
-                                <form method = "post" action = "">
+                                <form method = "post" action = "" onSubmit=" return savePost();">
                                 <!--Body-->
                                 <div class="md-form">
                                     <i class="fa fa-user prefix"></i>
-                                    <input type="text" id="form3" class="form-control" name="username">
+                                    <input type="text" id="form3" class="form-control" name="username" value="<?php if(isset($_POST['username'])){echo $_POST['username'];}?>">
                                     <label for="form3">Username</label>
                                 </div>
                                 <div class="md-form">
                                     <i class="fa fa-envelope prefix"></i>
-                                    <input type="text" id="form2" class="form-control" name="email">
+                                    <input type="text" id="form2" class="form-control" name="email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];}?>" >
                                     <label for="form2">Email</label>
                                 </div>
 
